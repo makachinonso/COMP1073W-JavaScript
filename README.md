@@ -1,2 +1,2 @@
 # COMP1073W-JavaScript
-For Assignments and Labs
+In-class Code examples, tasks and lesson files
