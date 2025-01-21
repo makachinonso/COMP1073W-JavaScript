@@ -83,4 +83,14 @@
     }
 			// STEP 3a: Add an event listener for the guess form button that calls the checkGuess function, then test that the event listener is working and that it invokes the function
 			guessSubmit.addEventListener('click',checkGuess);
+
+			function enterKeyFxn(item) {
+				if (item.key === "Enter"){
+					checkGuess();
+				}
+				console.log("it worked")
+			}
+
+			document.addEventListener('keydown', enterKeyFxn);
+
 			// This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash
