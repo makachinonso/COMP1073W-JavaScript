@@ -28,7 +28,7 @@ async function populate(){
 populate();
 
 /* STEP 9b: Build out the populateHeader() function */
-function populateHeader() {
+function populateHeader(jsonObj) {
     // Create the H1 element
     const headreH1 = document.createElement('h1');
     // Grab the company name from the JSON object and use it for the text node
@@ -37,7 +37,7 @@ function populateHeader() {
     header.appendChild(headreH1);
 };
 /* STEP 10b: Assemble the showTopFlavors() function */
-function showTopFlavors() {
+function showTopFlavors(jsonObj) {
     // STEP 10c: Attache the JSON topFlavors object to a variable
     let topFlavors = jsonObj.topFlavors;
     // STEP 10d: Loop through the topFlavors object
