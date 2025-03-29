@@ -47,11 +47,48 @@ function showTopFlavors(jsonObj) {
         let h2 = document.createElement('h2');
         let image = document.createElement('img');
         let ul = document.createElement('ul');
+        let calorieInfo = document.createElement('p');
+        let typeBadge = document.createElement('span');
+
 
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
         h2.textContent = topFlavors[i]["name"];
         image.setAttribute('src','https://raw.githubusercontent.com/shiv-coder/COMP1073W/main/lesson-10/lesson-10/images/' + topFlavors[i].image)
+        image.setAttribute('alt', topFlavors[i]["name"]);
 
+         //Calories Label
+         let calories = topFlavors[i]["calories"];
+         calorieInfo.textContent = `Calories: ${calories}`;
+ 
+         if (calories < 400) {
+             calorieInfo.style.color = "green";
+             calorieInfo.textContent += " (Low Calorie)";
+         } else if (calories >= 400 && calories <= 600) {
+             calorieInfo.style.color = "orange";
+             calorieInfo.textContent += " (Moderate Calorie)";
+         } else {
+             calorieInfo.style.color = "red";
+             calorieInfo.textContent += " (High Calorie)";
+         }
+ 
+         //Type Badge
+         let type = topFlavors[i]["type"];
+         typeBadge.textContent = type.toUpperCase();
+         typeBadge.style.padding = "5px 10px";
+         typeBadge.style.borderRadius = "5px";
+         typeBadge.style.color = "white";
+         typeBadge.style.fontWeight = "bold";
+         typeBadge.style.marginLeft = "10px";
+ 
+         if (type === "ice cream") {
+             typeBadge.style.backgroundColor = "blue";
+         } else if (type === "sorbet") {
+             typeBadge.style.backgroundColor = "purple";
+         } else if (type === "popsicle") {
+             typeBadge.style.backgroundColor = "goldenrod";
+         }
+ 
+         h2.appendChild(typeBadge); // Attach type badge next to the flavor name
 
         // STEP 10g: Build a loop for the ingredients array in the JSON
         let ingredients = topFlavors[i]["ingredients"];
@@ -65,6 +102,7 @@ function showTopFlavors(jsonObj) {
         // STEP 10h: Append each of the above HTML elements to the ARTICLE element
         article.appendChild(h2);
         article.appendChild(image);
+        article.appendChild(calorieInfo);
         article.appendChild(ul);
         // STEP 10i: Append each complete ARTICLE element to the SECTION element
         section.appendChild(article);

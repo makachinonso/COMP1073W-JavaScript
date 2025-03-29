@@ -25,6 +25,28 @@
         "clover honey"
       ],
       "image" : "peach-mango.svg"
+    },
+    {
+      "name" : "Perfect Peach Mango",
+      "calories" : 500,
+      "type" : "popsicle",
+      "ingredients" : [
+        "vanila flavour",
+        "blueberry fruit",
+        "coconut flakes"
+      ],
+      "image" : "ice-cream-xtra1.svg"
+    },
+    {
+      "name" : "Dark Choco",
+      "calories" : 650,
+      "type" : "ice cream",
+      "ingredients" : [
+        "dark chocolate chips",
+        "cocoa powder",
+        "icing sugar"
+      ],
+      "image" : "strawberry-sprinkle.svg"
     }
   ]
 }
